@@ -5,7 +5,7 @@ variable "project_id" {
 
 variable "bucket_name" {
   description = "my_cloud_bucket"
-  type        = string
+  type        = list(string)
 }
 
 variable "region" {
@@ -15,6 +15,31 @@ variable "region" {
 }
 
 variable "credentials" {
-  description = "path to credentials needed to run the project"
+  description = "path to credentials needed to  run the project"
   type        = string
+}
+
+variable "functions" {
+  description = "list of function names"
+  type        = list(string)
+}
+
+variable "runtime" {
+  description ="project runtime"
+  type        = string
+}
+
+variable "memory" {
+  description = "available memory"
+  type        = list(number)
+}
+
+variable "pubsub_topic" {
+  description = "pubsub topic names"
+  type        = list(string)
+}
+
+variable "pubsub_subscription" {
+  description = "pubsub subscription names"
+  type        = list(string)
 }
